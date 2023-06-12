@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:56:12 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/09 17:11:41 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/12 20:44:51 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ int main(int ac, char **av)
 	first = get_map(fd);
 	ft_mapdownload(&map, &first);
 	ft_find_all(&map);
-	
+	ft_check_map(&map);
 	map.mlx = mlx_init();
 	map.win = mlx_new_window(map.mlx, map.width * 50, map.height * 50, "kichan");
-	make_base(&map);
+	printf("%d  %d\n", map.player[0],map.player[1]);
 	place_images(&map);
-	mlx_hook(map.win, X_EVENT_KEY_PRESS, 0, &key_press, &map);
+	mlx_hook(map.win, X_EVENT_KEY_PRESS, 0, &key, &map);
 	//mlx_hook(map.win, X_EVENT_KEY_EXIT, 0, &exit_e, &map);
 	mlx_loop(map.mlx);
 

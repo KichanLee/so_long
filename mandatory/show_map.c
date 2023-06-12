@@ -16,17 +16,17 @@ void make_base(t_map *map)
     int x;
     int y;
 
-    x = 0;
+    y = 0;
     mlx_clear_window(map->mlx, map->win);
-    while (x < map->height)
+    while (y < map->height)
     {
-        y = 0;
-        while (y < map->width)
+        x = 0;
+        while (x < map->width)
         {
-            put_img(map, x, y, "../pic/background_water.xpm");
-            ++y;
+            put_img(map, y, x, "../pic/background_water.xpm");
+            ++x;
         }
-        ++x;
+        ++y;
     }
 }
 
@@ -36,6 +36,7 @@ void	place_images(t_map *map)
 	int	y;
 
 	y = 0;
+	make_base(map);
 	while (y < map->height)
 	{
 		x = 0;
@@ -47,10 +48,8 @@ void	place_images(t_map *map)
 				put_img(map, y, x, "../pic/chu.xpm");
 			else if (map->mapstr[y][x] == '1')
 				put_img(map, y, x, "../pic/stone.xpm");
-			else if (map->mapstr[y][x] == 'E' && map->feed != 0)
+			else if (map->mapstr[y][x] == 'E')
 				put_img(map, y, x, "../pic/ball.xpm");
-			//else if (map->mapstr[y][x] == 'E' && map->feed == 0)
-			//	put_img(map, y, x, "../pic/exitt.xpm");
 			x++;
 		}
 		y++;

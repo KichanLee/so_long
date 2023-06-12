@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 00:17:36 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/09 17:15:25 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/12 20:37:39 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,7 @@ void    ft_find_feed(t_map *map)
         while(j < map->width)
         {   
             if(map->mapstr[i][j] == 'C')
-            {
-                map->player[0] = i; 
-                map->player[1] = j;
                 ++flag; 
-            }
             ++j;
         }
         ++i;
@@ -55,6 +51,7 @@ void    ft_find_player(t_map *map)
 
     i = 0;
     flag = 0;
+
     while(i < map->height)
     {
         j = 0;
@@ -72,7 +69,6 @@ void    ft_find_player(t_map *map)
     }
     if (flag != 1)
         error(1);
-
 }
 
 void    ft_find_exit(t_map *map)
@@ -90,8 +86,8 @@ void    ft_find_exit(t_map *map)
         {   
             if(map->mapstr[i][j] == 'E')
             {
-                map->player[0] = i; 
-                map->player[1] = j;
+                map->finish[0] = j; 
+                map->finish[1] = i;
                 ++flag; 
             }
             ++j;

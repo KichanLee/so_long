@@ -70,4 +70,12 @@ void make_base(t_map *map);
 void put_img(t_map *map, int x, int y, char *file);
 void	place_images(t_map *map);
 
+// key.c
+int     key(int key ,t_map *map);
+void    ft_up(t_map *map);
+void    ft_down(t_map *map);
+void    ft_left(t_map *map);
+void    ft_right(t_map *map);
+
+void as(t_map *map);
 #endif

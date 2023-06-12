@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 00:06:03 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/09 17:10:56 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/12 20:34:40 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void    ft_mapdownload(t_map *map, t_list **list)
     while (i < map->height)
     {
         map->mapstr[i] = ft_strdup(head->content);
+        printf("%s\n", map->mapstr[i]);
         head = head->next;
         ++i;
     }
