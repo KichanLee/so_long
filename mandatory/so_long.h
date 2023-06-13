@@ -77,5 +77,10 @@ void    ft_down(t_map *map);
 void    ft_left(t_map *map);
 void    ft_right(t_map *map);
 
-void as(t_map *map);
+// ft_checkmap.c
+void	ft_check_map(t_map map);
+
+// ft_check_arg.c
+void    ft_check_arg(int ac, char **av);
+
 #endif

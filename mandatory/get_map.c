@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:56:07 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/08 23:32:20 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/13 16:21:54 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ t_list	*get_map(int fd)
 		ft_lstadd_back(&head, temp);
 		str = get_next_line(fd);
 	}
-	
+	close(fd);
 	return(head);
 }

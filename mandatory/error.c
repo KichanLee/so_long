@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 00:40:07 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/09 16:28:25 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/13 16:36:10 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void    error(int nike)
         write(1, "You must use only one Exit\n", 27);
     else if (nike == 3)
         write(1, "You must use at least one feed\n", 30);
+    else if(nike == 4)
+        write(1, "You must use formal map!\n", 25);
     else
         write(1, "You Wrong\n", 10);
     exit(1);
