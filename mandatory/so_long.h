@@ -39,6 +39,15 @@ typedef struct s_list
 	struct	s_list	*next;
 }	t_list;
 
+typedef struct s_check
+{
+	char	**check_arr_one;
+	char	**check_arr_two;
+	int		feedcount;
+	int		exitcount;
+	int		dx[4];
+	int		dy[4];
+} t_check;
 
 
 // ft_list.c

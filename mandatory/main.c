@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 19:56:12 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/13 16:14:15 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/14 18:47:46 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ int main(int ac, char **av)
 	fd = open(av[1], O_RDONLY);
 
 	first = get_map(fd);
+	ft_check_arg(ac, av);
 	ft_mapdownload(&map, &first);
 	ft_check_map(map);
 	ft_find_all(&map);
-	//ft_check_arg(ac, av);
 	map.mlx = mlx_init();
 	map.win = mlx_new_window(map.mlx, map.width * 50, map.height * 50, "kichan");
 	place_images(&map);
