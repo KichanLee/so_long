@@ -32,6 +32,7 @@ typedef struct s_map{
 	int		player[2];
 	int		finish[2];
 	int		feed;
+	int		walkcount;
 }	t_map;
 typedef struct s_list
 {

@@ -6,13 +6,13 @@
 /*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 20:45:04 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/14 18:57:36 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/14 20:16:42 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void check_square(t_map map)
+void	check_square(t_map map)
 {
 	int i;
 	int j;
@@ -34,7 +34,7 @@ void check_square(t_map map)
 		error(4);
 }
 
-void check_allowedcharacter(t_map map)
+void	check_allowedcharacter(t_map map)
 {
 	int i;
 	int j;
@@ -54,8 +54,7 @@ void check_allowedcharacter(t_map map)
 	}
 }
 
-
-void check_aroundonlyone(t_map map)
+void	check_aroundonlyone(t_map map)
 {
 	int i;
 	int j;
@@ -75,6 +74,7 @@ void check_aroundonlyone(t_map map)
 		++j;
 	}
 }
+
 void	one_dfs(int x, int y, t_check *ch, t_map map)
 {
 	int	i;
@@ -87,18 +87,18 @@ void	one_dfs(int x, int y, t_check *ch, t_map map)
 	{
 		nx = x + ch->dx[i];	
 		ny = y + ch->dy[i];
-		if(nx >= 0 && nx < map.width && ny >= 0 && ny < map.height && ch->check_arr_one[nx][ny] != '1')
+		if (nx < 0 || nx > map.height || ny < 0 || ny > map.width)
+			continue ;
+		if(ch->check_arr_one[nx][ny] != '1')
 		{
-			//if (ch->check_arr_one[nx][ny] == 'E' || ch->check_arr_one[nx][ny] == '0' || ch->check_arr_one[nx][ny] == 'C' || ch->check_arr_one[nx][ny] == 'P')
-			//{
-				if(ch->check_arr_one[nx][ny] == 'E')
-					ch->exitcount--;
-			//}
+			if(ch->check_arr_one[nx][ny] == 'E')
+				ch->exitcount--;
 			one_dfs(nx, ny, ch, map);
 		}
 		++i;
 	}
 }
+
 void	two_dfs(int x, int y, t_check *ch, t_map map)
 {
 	int	i;
@@ -107,11 +107,15 @@ void	two_dfs(int x, int y, t_check *ch, t_map map)
 
 	i = 0;
 	ch->check_arr_two[x][y] = '1';
+
+	printf("x : %d y : %d\n", x, y);
 	while (i < 4)
 	{
 		nx = x + ch->dx[i];	
 		ny = y + ch->dy[i];
-		if(nx >= 0 && nx < map.width && ny >= 0 && ny < map.height && ch->check_arr_two[nx][ny] != '1')
+		if (nx < 0 || nx > map.height || ny < 0 || ny > map.width - 1)
+			continue ;
+		if(ch->check_arr_two[nx][ny] != 'E' && ch->check_arr_two[nx][ny] != '1')
 		{
 			if(ch->check_arr_two[nx][ny] == 'C')
 				ch->feedcount -= 1;
