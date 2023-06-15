@@ -6,11 +6,45 @@
 /*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 23:05:18 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/08 23:30:09 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/15 21:17:49 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	ft_lstclear(t_list **lst)
+{
+	t_list	*curr;
+	t_list	*next;
+
+	if (!lst)
+		return ;
+	curr = *lst;
+	while (curr)
+	{
+		next = curr->next;
+		free(curr); 
+		curr = next;
+	}
+	*lst = NULL;
+}
+void	ft_lstclear_map(t_map **lst)
+{
+	t_map	*curr;
+	t_map	*next;
+
+	if (!lst)
+		return ;
+	curr = *lst;
+	while (curr)
+	{
+		next = curr->next;
+		free(curr);
+		curr = next;
+	}
+	*lst = NULL;
+}
+
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

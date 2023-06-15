@@ -33,6 +33,7 @@ typedef struct s_map{
 	int		finish[2];
 	int		feed;
 	int		walkcount;
+	struct	s_map	*next;
 }	t_map;
 typedef struct s_list
 {
@@ -55,7 +56,8 @@ typedef struct s_check
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int	ft_lstsize(t_list *lst);
-
+void	ft_lstclear(t_list **lst);
+void	ft_lstclear_map(t_map **lst);
 
 // get_map.c
 t_list	*get_map(int fd);
@@ -68,6 +70,7 @@ void    ft_mapdownload(t_map *map, t_list **list);
 
 // error.c
 void    error(int nike);
+int	exit_e();
 
 // ft_lookingfor.c
 void    ft_find_all(t_map *map);
@@ -88,9 +91,15 @@ void    ft_left(t_map *map);
 void    ft_right(t_map *map);
 
 // ft_checkmap.c
-void	ft_check_map(t_map map);
+
+void	ft_check_map(t_map map, t_map *map_free);
+void	check_square(t_map map);
+void	check_allowedcharacter(t_map map);
+void	check_aroundonlyone(t_map map);
 
 // ft_check_arg.c
 void    ft_check_arg(int ac, char **av);
 
+//ft_show_walk.c
+void	showwalk(t_map *map);
 #endif

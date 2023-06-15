@@ -6,11 +6,11 @@
 /*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:25:46 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/14 20:25:51 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/15 21:40:46 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "so_long.h"
 
 long	ft_len(int n)
 {
@@ -61,3 +61,21 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
+void	showwalk(t_map *map)
+{
+	char	*str;
+	int		i;
+	int		len;
+
+	str = NULL;
+	i = 0;
+	str = ft_itoa(map->walkcount);
+	len = strlen(str);
+	while (i < len)
+	{
+		write(1, &str[i], 1);
+		++i;
+	}
+	write(1, "\n", 1);
+	free(str);
+}
