@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 23:05:18 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/15 21:17:49 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/16 16:11:53 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ void	ft_lstclear(t_list **lst)
 	while (curr)
 	{
 		next = curr->next;
-		free(curr); 
+		free(curr);
 		curr = next;
 	}
 	*lst = NULL;
 }
+
 void	ft_lstclear_map(t_map **lst)
 {
 	t_map	*curr;
@@ -44,7 +45,6 @@ void	ft_lstclear_map(t_map **lst)
 	}
 	*lst = NULL;
 }
-
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 00:40:07 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/15 21:58:42 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/16 16:05:14 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	error(int nike)
 	exit(1);
 }
 
-int	exit_e()
+int	exit_e(void)
 {
 	exit(0);
-	return(0);
+	return (0);
 }

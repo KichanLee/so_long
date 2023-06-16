@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 17:12:48 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/15 21:51:47 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/16 16:12:33 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	key(int key, t_map *map)
 		ft_down(map);
 	else if (key == KEY_ESC)
 		exit(0);
-	if(cnt != map->walkcount)
+	if (cnt != map->walkcount)
 		showwalk(map);
 	return (0);
 }

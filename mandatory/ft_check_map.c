@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 20:45:04 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/15 17:13:34 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/16 16:28:04 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	check_square(t_map map)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	while(map.mapstr[i])
+	while (map.mapstr[i])
 	{
 		j = 0;
 		while (map.mapstr[i][j])
 			++j;
-		if (map.mapstr[i][j-1] == '\n')
+		if (map.mapstr[i][j - 1] == '\n')
 			--j;
 		if (j != map.width)
 			error(4);
@@ -36,8 +36,8 @@ void	check_square(t_map map)
 
 void	check_allowedcharacter(t_map map)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -46,7 +46,9 @@ void	check_allowedcharacter(t_map map)
 		j = 0;
 		while (j < map.width)
 		{
-			if (map.mapstr[i][j] != '1' && map.mapstr[i][j] != '0' && map.mapstr[i][j] != 'P' && map.mapstr[i][j] != 'C' && map.mapstr[i][j] != 'E')
+			if (map.mapstr[i][j] != '1' && map.mapstr[i][j] != '0' \
+			&& map.mapstr[i][j] != 'P' && map.mapstr[i][j] != \
+			'C' && map.mapstr[i][j] != 'E')
 				error(4);
 			++j;
 		}
@@ -56,8 +58,8 @@ void	check_allowedcharacter(t_map map)
 
 void	check_aroundonlyone(t_map map)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
@@ -69,8 +71,16 @@ void	check_aroundonlyone(t_map map)
 	}
 	while (j < map.width)
 	{
-		if(map.mapstr[0][j] != '1')
+		if (map.mapstr[0][j] != '1')
 			error(4);
 		++j;
 	}
+}
+
+void	ft_check_map(t_map map, t_map *map_free)
+{
+	check_square(map);
+	check_aroundonlyone(map);
+	check_allowedcharacter(map);
+	init_for_dfs(map);
 }
