@@ -6,7 +6,7 @@
 /*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 16:14:53 by kichan            #+#    #+#             */
-/*   Updated: 2023/06/16 16:17:56 by kichan           ###   ########.fr       */
+/*   Updated: 2023/06/16 16:51:00 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	make_base(t_map *map)
 		x = 0;
 		while (x < map->width)
 		{
-			put_img(map, y, x, "../pic/background_water.xpm");
+			put_img(map, y, x, "./pic/background_water.xpm");
 			++x;
 		}
 		++y;
@@ -55,13 +55,13 @@ void	place_images(t_map *map)
 		while (x < map->width)
 		{
 			if (map->mapstr[y][x] == 'P')
-				put_img(map, y, x, "../pic/ggobuk.xpm");
+				put_img(map, y, x, "./pic/ggobuk.xpm");
 			else if (map->mapstr[y][x] == 'C')
-				put_img(map, y, x, "../pic/chu.xpm");
+				put_img(map, y, x, "./pic/chu.xpm");
 			else if (map->mapstr[y][x] == '1')
-				put_img(map, y, x, "../pic/stone.xpm");
+				put_img(map, y, x, "./pic/stone.xpm");
 			else if (map->mapstr[y][x] == 'E')
-				put_img(map, y, x, "../pic/ball.xpm");
+				put_img(map, y, x, "./pic/ball.xpm");
 			x++;
 		}
 		y++;

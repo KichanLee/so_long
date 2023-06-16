@@ -6,7 +6,7 @@
 /*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 12:49:41 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/16 15:58:09 by kichan           ###   ########.fr       */
+/*   Updated: 2023/06/16 16:35:40 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,8 @@ int	ft_strcmp(const char *s1, const char *s2)
 
 void	ft_check_arg(int ac, char **av)
 {
-	int		i;
 	char	*str;
 
-	i = 4;
 	if (ac != 2)
 		error(4);
 	str = ft_strrchr(av[1], '.');

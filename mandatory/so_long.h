@@ -6,7 +6,7 @@
 /*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 16:18:23 by kichan            #+#    #+#             */
-/*   Updated: 2023/06/16 16:27:51 by kichan           ###   ########.fr       */
+/*   Updated: 2023/06/16 16:36:23 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void			ft_up(t_map *map);
 void			ft_down(t_map *map);
 void			ft_left(t_map *map);
 void			ft_right(t_map *map);
-void			ft_check_map(t_map map, t_map *map_free);
+void			ft_check_map(t_map map);
 void			check_square(t_map map);
 void			check_allowedcharacter(t_map map);
 void			check_aroundonlyone(t_map map);

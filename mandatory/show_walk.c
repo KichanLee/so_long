@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   show_walk.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kichlee <kichlee@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 20:25:46 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/15 21:40:46 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/06/16 16:37:02 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,12 @@ long	ft_len(int n)
 char	*ft_itoa(int n)
 {
 	char	*str;	
-	long	i;
 	long	n_size;
 	long	l_n;
 
 	l_n = (long) n;
 	n_size = ft_len(n);
 	str = malloc(n_size + 1);
-	i = 0;
 	if (!str)
 		return (0);
 	if (l_n == 0)

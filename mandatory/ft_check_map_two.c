@@ -6,7 +6,7 @@
 /*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 17:10:48 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/16 16:26:42 by kichan           ###   ########.fr       */
+/*   Updated: 2023/06/16 16:35:53 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,8 @@ void	init_for_dfs(t_map map)
 {
 	t_check	t;
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
 	ft_init_for_tcheck(&t, map);
 	t.check_arr_one = (char **)malloc(sizeof(char *) * map.height);
 	t.check_arr_two = (char **)malloc(sizeof(char *) * map.height);

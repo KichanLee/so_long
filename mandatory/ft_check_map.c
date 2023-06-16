@@ -6,7 +6,7 @@
 /*   By: kichan <kichan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 20:45:04 by kichlee           #+#    #+#             */
-/*   Updated: 2023/06/16 16:28:04 by kichan           ###   ########.fr       */
+/*   Updated: 2023/06/16 16:36:07 by kichan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	check_aroundonlyone(t_map map)
 	}
 }
 
-void	ft_check_map(t_map map, t_map *map_free)
+void	ft_check_map(t_map map)
 {
 	check_square(map);
 	check_aroundonlyone(map);
